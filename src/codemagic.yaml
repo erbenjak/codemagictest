@@ -5,6 +5,18 @@ workflows:
     max_build_duration: 120
     environment:
       flutter: stable
+      groups:
+        - email-variables
+
+    triggering:
+      events:
+        - push
+      branch_patterns: # Include or exclude watched branches
+        - pattern: "*"
+          include: true
+          source: true
+
+
     scripts:
       - name: Dynamic email change
         script: |
