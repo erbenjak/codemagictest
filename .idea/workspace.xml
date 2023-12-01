@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbac53f8-0d3c-47ea-8da6-794ac1ef8f0e" name="Changes" comment="feature: add codemagic support">
+    <list default="true" id="dbac53f8-0d3c-47ea-8da6-794ac1ef8f0e" name="Changes" comment="feature: add codemagic webhook">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/codemagic.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/codemagic.yaml" afterDir="false" />
     </list>
@@ -68,7 +68,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701421318239</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feature: add codemagic webhook">
+      <created>1701421788521</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701421788521</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -76,6 +83,7 @@
     <MESSAGE value="chore: create empty flutter project" />
     <MESSAGE value="chore: create empty flutter project 2" />
     <MESSAGE value="feature: add codemagic support" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: add codemagic support" />
+    <MESSAGE value="feature: add codemagic webhook" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: add codemagic webhook" />
   </component>
 </project>
