@@ -26,7 +26,7 @@ workflows:
     publishing:
       email:
         recipients:
-          - $email_address
+          - jakobus.erben@gmail.com
         notify:
           success: true
           failure: true

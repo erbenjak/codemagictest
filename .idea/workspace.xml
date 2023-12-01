@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbac53f8-0d3c-47ea-8da6-794ac1ef8f0e" name="Changes" comment="ci trigger" />
+    <list default="true" id="dbac53f8-0d3c-47ea-8da6-794ac1ef8f0e" name="Changes" comment="fix: correct email exchange">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemagic.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/codemagic.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +38,11 @@
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jerben\StudioProjects\codemagictest" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -93,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701422029609</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix: correct email exchange">
+      <created>1701422175758</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701422175758</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -105,6 +120,7 @@
     <MESSAGE value="feature: add codemagic webhook 2" />
     <MESSAGE value="fix: add codemagic webhook 3" />
     <MESSAGE value="ci trigger" />
-    <option name="LAST_COMMIT_MESSAGE" value="ci trigger" />
+    <MESSAGE value="fix: correct email exchange" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: correct email exchange" />
   </component>
 </project>
