@@ -20,7 +20,7 @@ workflows:
     scripts:
       - name: Dynamic email change
         script: |
-          export $email_address="jakob.erben@js-soft.com"
+          export email_address="jakob.erben@js-soft.com"
           echo $email_address 
 
     publishing:
