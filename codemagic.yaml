@@ -16,12 +16,30 @@ workflows:
           include: true
           source: true
 
-
     scripts:
       - name: Dynamic email change
         script: |
           export email_address="jakob.erben@js-soft.com"
           echo $email_address 
+
+      - name: Set up local.properties
+        script: echo "flutter.sdk=$HOME/programs/flutter" > "$CM_BUILD_DIR/android/local.properties"
+
+      - name: Get Flutter packages
+        script: flutter pub get
+
+
+      - name: Build Android-Application-Bundle  with Flutter
+        script: |
+          BUILD_NUMBER=1
+          flutter build apk --debug \
+            --build-name=1.0.$BUILD_NUMBER \
+            --build-number=$BUILD_NUMBER \   
+
+    artifacts:
+      - build/**/outputs/flutter-apk/*.apk
+      - build/**/outputs/**/mapping.txt
+      - flutter_drive.log
 
     publishing:
       email:
