@@ -40,7 +40,7 @@ workflows:
         script: |
           #!/bin/sh
           set -ex
-          printenv
+          echo $CM_ARTIFACT_LINKS
 
     artifacts:
       - build/**/outputs/flutter-apk/*.apk
