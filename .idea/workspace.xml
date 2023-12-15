@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbac53f8-0d3c-47ea-8da6-794ac1ef8f0e" name="Changes" comment="test: trying to confirm behaviour">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="dbac53f8-0d3c-47ea-8da6-794ac1ef8f0e" name="Changes" comment="test: inspecting all artifact files environment list">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/codemagic.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/codemagic.yaml" afterDir="false" />
     </list>
@@ -130,7 +129,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701423481799</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="test: inspecting all environment variables">
+      <created>1702646274792</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1702646274792</updated>
+    </task>
+    <task id="LOCAL-00013" summary="test: inspecting all artifact files environment list">
+      <created>1702646743293</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1702646743293</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -144,6 +157,8 @@
     <MESSAGE value="ci trigger" />
     <MESSAGE value="fix: correct email exchange" />
     <MESSAGE value="test: trying to confirm behaviour" />
-    <option name="LAST_COMMIT_MESSAGE" value="test: trying to confirm behaviour" />
+    <MESSAGE value="test: inspecting all environment variables" />
+    <MESSAGE value="test: inspecting all artifact files environment list" />
+    <option name="LAST_COMMIT_MESSAGE" value="test: inspecting all artifact files environment list" />
   </component>
 </project>
