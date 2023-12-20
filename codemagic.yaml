@@ -32,7 +32,7 @@ workflows:
       - name: Build Android-Application-Bundle  with Flutter
         script: |
           BUILD_NUMBER=1
-          flutter build apk --debug \
+          flutter building apk --debug \
             --build-name=1.0.$BUILD_NUMBER \
             --build-number=$BUILD_NUMBER \
 
