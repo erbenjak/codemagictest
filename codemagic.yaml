@@ -36,12 +36,6 @@ workflows:
             --build-name=1.0.$BUILD_NUMBER \
             --build-number=$BUILD_NUMBER \
 
-      - name : Display the file listings for all needed things
-        script: |
-          #!/bin/sh
-          set -ex
-          echo $CM_ARTIFACT_LINKS
-
     artifacts:
       - build/**/outputs/flutter-apk/*.apk
       - build/**/outputs/**/mapping.txt
@@ -54,3 +48,6 @@ workflows:
         notify:
           success: true
           failure: true
+      scripts:
+        - name: Display the file listings for all needed things
+          script: echo $CM_ARTIFACT_LINKS
