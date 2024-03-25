@@ -20,14 +20,13 @@ workflows:
       - name: Dynamic email change
         script: |
           export email_address="jakob.erben@js-soft.com"
-          echo $email_address 
+          echo $email_address
 
       - name: Set up local.properties
         script: echo "flutter.sdk=$HOME/programs/flutter" > "$CM_BUILD_DIR/android/local.properties"
 
       - name: Get Flutter packages
         script: flutter pub get
-
 
       - name: Build Android-Application-Bundle  with Flutter
         script: |
@@ -44,7 +43,7 @@ workflows:
     publishing:
       email:
         recipients:
-          - $email_address
+          - jakobus.erben@gmail.com
         notify:
           success: true
           failure: true
