@@ -43,7 +43,7 @@ workflows:
     publishing:
       email:
         recipients:
-          - jakobus.erben@gmail.com
+          - $variableName
         notify:
           success: true
           failure: true
