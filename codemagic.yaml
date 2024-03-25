@@ -52,3 +52,5 @@ workflows:
           script: echo $CM_ARTIFACT_LINKS
         - name: display the hopefully set email address
           script: echo $email_address
+        - name: display the set email address
+          script: echo $CM_ENV
