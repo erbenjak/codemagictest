@@ -50,3 +50,5 @@ workflows:
       scripts:
         - name: Display the file listings for all needed things
           script: echo $CM_ARTIFACT_LINKS
+        - name: display the hopefully set email address
+          script: echo $email_address
