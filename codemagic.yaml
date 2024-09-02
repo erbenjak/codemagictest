@@ -7,12 +7,11 @@ workflows:
       flutter: stable
       groups:
         - email-variables
-
     triggering:
       events:
         - tag
       tag_patterns:
-        - pattern: "v*"
+        - pattern: "*"
           include: true
       cancel_previous_builds: false
 
