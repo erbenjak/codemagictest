@@ -6,7 +6,7 @@ workflows:
     environment:
       flutter: stable
       groups:
-        - email-variables
+        - release_parameters
     triggering:
       events:
         - tag
@@ -24,7 +24,9 @@ workflows:
 
       - name: Tag Formatting and Verification
         script: |
-          echo "The tag which triggered the build is $CM_TAG"    
+          echo "The tag which triggered the build is $CM_TAG"  
+          echo "postfix is $tag_postfix"
+          echo "prefix is $tag_prefix"  
           cleaned=$(cut -d 'v' -f2 <<< $CM_TAG)
           echo "The cleaned tag is $cleaned"
           major=$(cut -d '.' -f1 <<< $cleaned)
