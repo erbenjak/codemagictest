@@ -41,9 +41,10 @@ workflows:
       #Insert some form of tag verification
       - name: Build Android-Application-Bundle  with Flutter
         script: |
+          echo "Building with the following tag: $cleaned"
           BUILD_NUMBER=1
           flutter build appbundle --release \
-            --build-name=$CM_TAG \
+            --build-name=$cleaned \
             --build-number=$BUILD_NUMBER \
 
     artifacts:
