@@ -17,11 +17,6 @@ workflows:
           source: true
 
     scripts:
-      - name: Dynamic email change
-        script: |
-          export email_address="jakob.erben@js-soft.com"
-          echo $email_address
-
       - name: Set up local.properties
         script: echo "flutter.sdk=$HOME/programs/flutter" > "$CM_BUILD_DIR/android/local.properties"
 
@@ -41,12 +36,6 @@ workflows:
       - flutter_drive.log # this does not have to be present when the command fails...
 
     publishing:
-      email:
-        recipients:
-          - $variableName
-        notify:
-          success: true
-          failure: true
       scripts:
         - name: Display the file listings for all needed things
           script: echo $CM_ARTIFACT_LINKS
