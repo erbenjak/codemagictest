@@ -31,8 +31,8 @@ workflows:
           major=$(cut -d '.' -f1 <<< $cleaned)
           minor=$(cut -d '.' -f2 <<< $cleaned)
           patch=$(cut -d '.' -f3 <<< $cleaned)
-          if [[ ! $major =~ '^[0-9]+$' ]] || [[ ! $minor =~ '^[0-9]+$' ]] || [[ ! $patch =~ '^[0-9]+$' ]]; then
-            echo "$major.$minor.$patch is not a valid version. Each part must match the regex set in the codemagic variables! (currently: \"$version_number_regex\")"
+          if [[ ! $major =~ ^[0-9]+$ ]] || [[ ! $minor =~ ^[0-9]+$ ]] || [[ ! $patch =~ ^[0-9]+$ ]]; then
+            echo "$major.$minor.$patch is not a valid version. Each part must match the regex set in the codemagic variables!)"
             exit 1
           fi
 
