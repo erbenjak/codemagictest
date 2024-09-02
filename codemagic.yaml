@@ -34,9 +34,8 @@ workflows:
           major=$(cut -d '.' -f1 <<< $cleaned)
           minor=$(cut -d '.' -f2 <<< $cleaned)
           patch=$(cut -d '.' -f3 <<< $cleaned)
-          regex='^[0-9]+$'
-          if [[ ! $major =~ $regex ]] || [[ ! $minor =~ $regex ]] || [[ ! $patch =~ $regex ]]; then
-            echo "Tag is not a valid version. [major].[minor].[patch] expected. (Major, minor and patch must be two digit numbers!). Got $major.$minor.$patch"
+          if [[ ! $major =~ $version_number_regex ]] || [[ ! $minor =~ $version_number_regex ]] || [[ ! $patch =~ $version_number_regex ]]; then
+            echo "$major.$minor.$patch is not a valid version. Each part must match the regex set in the codemagic variables! (currently: $version_number_regex)"
             exit 1
           fi
       #Insert some form of tag verification
@@ -49,7 +48,7 @@ workflows:
             --build-number=$BUILD_NUMBER \
 
     artifacts:
-      - build/**/outputs/flutter-apk/*.apk
+      - build/**/outputs/flutter-apk/*.aab
       - build/**/outputs/**/mapping.txt
       - flutter_drive.log # this does not have to be present when the command fails...
 
