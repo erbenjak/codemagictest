@@ -28,6 +28,28 @@ workflows:
           echo "Now we remove the v from the tag"
           cleaned = $(cut -d 'v' -f2 <<< $CM_TAG)
           echo "The cleaned tag is $cleaned"
+          echo "Now we perform a small sanity check by dividing at the dots"
+          major = $(cut -d '.' -f1 <<< $cleaned)
+          minor = $(cut -d '.' -f2 <<< $cleaned)
+          patch = $(cut -d '.' -f3 <<< $cleaned)
+          valid = true
+          regex = '^[0-9]+$'
+          if [[ ! $major =~ $regex ]]; then
+            echo "Major version is not a two digit number"
+            valid = false
+          fi
+          if [[ ! $minor =~ $regex ]]; then
+            echo "Minor version is not a two digit number"
+            valid = false
+          fi
+          if [[ ! $patch =~ $regex ]]; then
+            echo "Patch version is not a two digit number"
+            valid = false
+          fi
+          if [[ $valid == false ]]; then
+            echo "The tag is not a valid version number"
+            exit 1
+          fi
       #Insert some form of tag verification
       - name: Build Android-Application-Bundle  with Flutter
         script: |
