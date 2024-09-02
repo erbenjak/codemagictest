@@ -22,6 +22,9 @@ workflows:
       - name: Get Flutter packages
         script: flutter pub get
 
+      - name: Verify codemagic variable fot the tag
+        script: echo "The tag is $CM_TAG"
+
       - name: Build Android-Application-Bundle  with Flutter
         script: |
           BUILD_NUMBER=1
