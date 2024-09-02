@@ -36,14 +36,14 @@ workflows:
             echo "$major.$minor.$patch is not a valid version. Each part must match the regex set in the codemagic variables! (currently: \"$version_number_regex\")"
             exit 1
           fi
-          export CM_TAG
+          export cleaned_tag=$CM_TAG
       #Insert some form of tag verification
       - name: Build Android-Application-Bundle  with Flutter
         script: |
-          echo "Building with the following tag: $CM_TAG"
+          echo "Building with the following tag: $cleaned_tag"
           BUILD_NUMBER=1
           flutter build appbundle --release \
-            --build-name=$CM_TAG \
+            --build-name=$cleaned_tag" \
             --build-number=$BUILD_NUMBER \
 
     artifacts:
