@@ -25,8 +25,8 @@ workflows:
       - name: Build Android-Application-Bundle  with Flutter
         script: |
           BUILD_NUMBER=1
-          flutter build apk --debug \
-            --build-name=1.0.$BUILD_NUMBER \
+          flutter build appbundle --release \
+            --build-name=$CM_TAG \
             --build-number=$BUILD_NUMBER \
 
     artifacts:
