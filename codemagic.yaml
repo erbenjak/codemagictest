@@ -25,12 +25,12 @@ workflows:
       - name: Tag Formatting and Verification
         script: |
           echo "The tag which triggered the build is $CM_TAG"    
-          cleaned=$(echo $CM_TAG)
+          cleaned=$($CM_TAG)
           echo "The cleaned tag is $cleaned"
           major=$(cut -d '.' -f1 <<< $cleaned)
           minor=$(cut -d '.' -f2 <<< $cleaned)
           patch=$(cut -d '.' -f3 <<< $cleaned)
-          regex = '^[0-9]+$'
+          regex='^[0-9]+$'
           if [[ ! $major =~ $regex ]] || [[ ! $minor =~ $regex ]] || [[ ! $patch =~ $regex ]]; then
             echo "Tag is not a valid version. [major].[minor].[patch] expected. (Major, minor and patch must be two digit numbers!). Got $major.$minor.$patch"
             exit 1
