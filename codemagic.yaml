@@ -25,10 +25,8 @@ workflows:
       - name: Tag Formatting and Verification
         script: |
           echo "The tag which triggered the build is $CM_TAG"  
-          if [[ $tag_prefix == "" ]]; then
-            cleaned=$CM_TAG
-          else
-            cleaned=$(awk -F $tag_prefix '{print $2}' <<< $CM_TAG)
+          if [[ $tag_prefix != "" ]]; then
+            CM_TAG=$(awk -F $tag_prefix '{print $2}' <<< $CM_TAG)
           fi
           echo "The cleaned tag is $cleaned"
           major=$(cut -d '.' -f1 <<< $cleaned)
@@ -38,14 +36,13 @@ workflows:
             echo "$major.$minor.$patch is not a valid version. Each part must match the regex set in the codemagic variables! (currently: $version_number_regex)"
             exit 1
           fi
-          set tag=$cleaned
       #Insert some form of tag verification
       - name: Build Android-Application-Bundle  with Flutter
         script: |
-          echo "Building with the following tag: $tag"
+          echo "Building with the following tag: $CM_TAG"
           BUILD_NUMBER=1
           flutter build appbundle --release \
-            --build-name=$cleaned \
+            --build-name=$CM_TAG \
             --build-number=$BUILD_NUMBER \
 
     artifacts:
