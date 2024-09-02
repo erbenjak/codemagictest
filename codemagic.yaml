@@ -10,11 +10,11 @@ workflows:
 
     triggering:
       events:
-        - push
-      branch_patterns: # Include or exclude watched branches
-        - pattern: "*"
+        - tag
+      tag_patterns:
+        - pattern: "v*"
           include: true
-          source: true
+      cancel_previous_builds: false
 
     scripts:
       - name: Set up local.properties
@@ -38,8 +38,4 @@ workflows:
     publishing:
       scripts:
         - name: Display the file listings for all needed things
-          script: echo $CM_ARTIFACT_LINKS
-        - name: display the hopefully set email address
-          script: echo $email_address
-        - name: display the set email address
-          script: echo $CM_ENV
+          script: echo "Listing all files in the build directory" && ls -la build
