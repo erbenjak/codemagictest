@@ -44,7 +44,7 @@ workflows:
           echo "Building with the following tag: $cleaned_tag"
           BUILD_NUMBER=1
           flutter build appbundle --release \
-            --build-name=$cleaned_tag" \
+            --build-name=$cleaned_tag \
             --build-number=$BUILD_NUMBER \
 
     artifacts:
