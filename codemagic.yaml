@@ -25,11 +25,11 @@ workflows:
       - name: Tag Formatting and Verification
         script: |
           echo "The tag which triggered the build is $CM_TAG"  
-          echo "postfix is $tag_postfix"
-          echo "prefix is $tag_prefix" 
-          prefix_removed=$(awk -F $tag_prefix '{print $2}' <<< $CM_TAG)
-          echo "The prefix removed tag is $prefix_removed"
-          cleaned=$(awk -F $tag_postfix '{print $1}'' <<< $prefix_removed)
+          if [[ $tag_prefix == "" ]]; then
+            cleaned=$CM_TAG
+          else
+            cleaned=$(awk -F $tag_prefix '{print $2}' <<< $CM_TAG)
+          fi
           echo "The cleaned tag is $cleaned"
           major=$(cut -d '.' -f1 <<< $cleaned)
           minor=$(cut -d '.' -f2 <<< $cleaned)
