@@ -48,8 +48,7 @@ workflows:
             --build-number=$BUILD_NUMBER \
 
     artifacts:
-      - build/**/outputs/flutter-apk/*.aab
-      - build/**/outputs/**/mapping.txt
+      - build/**/outputs/**/*.aab
       - flutter_drive.log # this does not have to be present when the command fails...
 
     publishing:
