@@ -26,7 +26,8 @@ workflows:
         script: |
           echo "The tag which triggered the build is $CM_TAG"    
           echo "Now we remove the v from the tag"
-          echo <<< cut -d 'v' -f1 <<< $CM_TAG
+          cleaned = $(cut -d 'v' -f2 <<< $CM_TAG)
+          echo "The cleaned tag is $cleaned"
       #Insert some form of tag verification
       - name: Build Android-Application-Bundle  with Flutter
         script: |
