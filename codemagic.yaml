@@ -25,6 +25,7 @@ workflows:
       - name: Tag Formatting and Verification
         script: |
           echo "The tag which triggered the build is $CM_TAG"    
+          cut -d '.' -f1 <<< $CM_TAG | echo "Major: $1"
           cleaned=$($CM_TAG)
           echo "The cleaned tag is $cleaned"
           major=$(cut -d '.' -f1 <<< $cleaned)
