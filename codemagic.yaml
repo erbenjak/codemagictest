@@ -26,8 +26,9 @@ workflows:
         script: |
           echo "The tag which triggered the build is $CM_TAG"  
           echo "postfix is $tag_postfix"
-          echo "prefix is $tag_prefix"  
-          cleaned=$(cut -d '$tag_prefix' -f2 <<< $CM_TAG)
+          echo "prefix is $tag_prefix" 
+          prefix_removed=$(cut -d $tag_prefix -f2 <<< $CM_TAG)
+          cleaned=$(cut -d $tag_postfix -f1 <<< $prefix_removed)
           echo "The cleaned tag is $cleaned"
           major=$(cut -d '.' -f1 <<< $cleaned)
           minor=$(cut -d '.' -f2 <<< $cleaned)
