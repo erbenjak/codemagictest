@@ -10,6 +10,10 @@ workflows:
     triggering:
       events:
         - tag
+      tag_patterns:
+        - pattern: "enmeshed-v+([0-9]).+([0-9]).+([0-9])"
+          include: true
+      cancel_previous_builds: false
 
     scripts:
       - name: Set up local.properties
@@ -18,30 +22,12 @@ workflows:
       - name: Get Flutter packages
         script: flutter pub get
 
-      - name: Tag Formatting and Verification
-        script: |
-          echo "The tag which triggered the build is $CM_TAG"  
-          cleaned=$(awk -F 'v' '{print $2}' <<< $CM_TAG)
-          echo "The cleaned tag is $cleaned"
-
-          major=$(cut -d '.' -f1 <<< $cleaned)
-          minor=$(cut -d '.' -f2 <<< $cleaned)
-          patch=$(cut -d '.' -f3 <<< $cleaned)
-          if [[ ! $major =~ ^[0-9]+$ ]] || [[ ! $minor =~ ^[0-9]+$ ]] || [[ ! $patch =~ ^[0-9]+$ ]]; then
-            echo "$major.$minor.$patch is not a valid version. Each part must match the regex set in the codemagic variables!)"
-            exit 1
-          fi
-
-          echo $cleaned > tag_cleaned.txt
-
-      #Insert some form of tag verification
       - name: Build Android-Application-Bundle  with Flutter
         script: |
-          cleaned_tag=$(cat tag_cleaned.txt)
-          echo "Building with the following tag: $cleaned_tag"
+          echo "Building with the following tag: ${CM_TAG/#enmeshed-v/}"
           BUILD_NUMBER=1
           flutter build appbundle --release \
-            --build-name=$cleaned_tag \
+            --build-name=${CM_TAG/#enmeshed-v/} \
             --build-number=$BUILD_NUMBER \
 
     artifacts:
